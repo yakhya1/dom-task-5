@@ -40,7 +40,14 @@ function render(arr) {
    
     li.append(removeButton);
     li.prepend(checkBox);
-  
+   checkBox.addEventListener("click", (e)=> {
+  if(checkBox.checked === true){
+    arr[i].done = !arr[i].done;
+    li.style.textDecoration ="line-through"
+  }else if(checkBox.checked === false){
+   li.style.textDecoration ="none"
+  };
+ })
     removeButton.textContent = "x";
     removeButton.addEventListener("click", (e) => {
       remove([i]);
@@ -83,4 +90,3 @@ function todoCheck(id) {
       }
      
 }
- 
